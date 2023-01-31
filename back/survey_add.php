@@ -1,6 +1,4 @@
-<?php
-include "../db/base.php";
-?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -9,15 +7,15 @@ include "../db/base.php";
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>後台管理中心</title>
-    <?php include "../layouts/link_css.php";?>
-    <link rel="stylesheet" href="../css/back.css">
+    <?php include "./layouts/link_css.php";?>
+    <link rel="stylesheet" href="./css/back.css">
 
 </head>
 <body>
 
 <h3 class="text-center">新增調查<button onclick='addOption()' class="btn btn-success btn-sm py-0" style="font-size:1.5rem">+</button></h3>
 
-<form action="../api/survey_add.php" method="post" class="col-10 mx-auto d-flex flex-wrap justify-content-end">
+<form action="./api/survey_add.php" method="post" class="col-10 mx-auto d-flex flex-wrap justify-content-end">
     <div class="form-group row col-12">
         <label class="col-2 text-right">主題</label>
         <input type="text" name="subject" class="form-control col-10">
@@ -35,7 +33,7 @@ include "../db/base.php";
 <div class="text-center col-12 mt-3">
     <input class="btn btn-primary mx-1" type="submit" value="確定新增">
     <input class="btn btn-warning mx-1" type="reset" value="重置">
-    <input class="btn btn-warning mx-1" type="button" value="取消新增" onclick="location.href='survey_vote.php'">
+    <input class="btn btn-warning mx-1" type="button" value="取消新增" onclick="location.href='admin_center.php?do=survey_vote'">
 </div>
 </form>
 

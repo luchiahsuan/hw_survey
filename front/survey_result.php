@@ -1,4 +1,6 @@
 <?php
+include "../db/base.php";
+
 $subject=find("survey_subject",$_GET['id']);
 $options=all("survey_options",['subject_id'=>$_GET['id']]);
 
@@ -25,5 +27,5 @@ $options=all("survey_options",['subject_id'=>$_GET['id']]);
 </ul>
 <div class="text-center mt-4">
 
-    <a href="index.php?do=survey" class="btn btn-warning mx-1">返回</a>
+    <a href="./survey.php" class="btn btn-warning mx-1">返回</a>
 </div>

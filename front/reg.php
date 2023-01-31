@@ -1,5 +1,5 @@
 <div class="col-md-4 mx-auto my-5 p-5 border shadow-sm">
-    <h3 class="text-center">教師註冊</h3>
+    <h3 class="text-center">會員註冊</h3>
     <form action="./api/reg_user.php" method="post">
         <div class="form-group">
             <label>帳號</label>

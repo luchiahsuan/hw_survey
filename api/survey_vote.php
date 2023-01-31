@@ -1,3 +1,4 @@
+
 <?php
 include_once "../db/base.php";
 
@@ -31,5 +32,6 @@ $log=[
 ];
 insert("survey_log",$log);
 to("../index.php?do=survey_result&id={$subject['id']}");
+header("location:../front/survey.php");
 
 ?>

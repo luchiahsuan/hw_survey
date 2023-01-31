@@ -1,4 +1,17 @@
-<?php
+<?php include_once "../db/base.php";?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>投票專區</title>
+    <?php include "../layouts/link_css.php";?>
+    <link rel="stylesheet" href="../css/style.css">
+
+</head>
+<body>
+    <?php
 if(isset($_GET['id'])){
     $survey=find("survey_subject",$_GET['id']);
     $options=all("survey_options",['subject_id'=>$_GET['id']]);
@@ -9,7 +22,7 @@ if(isset($_GET['id'])){
 ?>
 <h3 class="text-center font-weight-bold"><?=$survey['subject'];?></h3>
 
-<form action="./api/survey_vote.php" method="post">
+<form action="../api/survey_vote.php" method="post">
 <div class="col-8 mx-auto mt-4">
     <?php
     if(isset($error)){
@@ -38,7 +51,7 @@ if(!isset($error)){
     <div class="text-center mt-4">
         <input type="submit" class="btn btn-primary mx-1" value="投票">
         <!-- <input type="hidden" name="subject_id" value="<?=$survey['id'];?>"> -->
-        <a href="index.php?do=survey" class="btn btn-warning mx-1">取消返回</a>
+        <a href="./survey.php" class="btn btn-warning mx-1">取消返回</a>
     </div>
 <?php
 }

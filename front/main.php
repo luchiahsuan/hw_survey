@@ -13,10 +13,13 @@ $hot=q("SELECT `id` FROM `survey_subject` ORDER BY `vote` desc");
 foreach($rows as $row){
     ?>
     <li class='list-group-item list-group-item-action d-flex'>
-    <div class='col-md-10'>
+    <div class='col-md-8'>
     <a href='index.php?do=news_detail&id=<?= $row['id'] ;?>'>
     <?= $row['subject'];?>
     </a>
+    </div>
+    <div class='col-md-2 text-center' style="height: 30px;">
+    <?= $row['img'];?>
     </div>
     <div class='col-md-2 text-center'>
     <?= $row['vote'];?>

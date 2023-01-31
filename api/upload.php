@@ -1,4 +1,7 @@
 <?php
+$data=[];
+
+
 if($_FILES['img']['error']==0){
     echo "檔案上傳成功";
     echo $_FILES['img']['tmp_name'];
@@ -15,9 +18,12 @@ if($_FILES['img']['error']==0){
 
 
 }else{
-    echo "檔案上傳失敗";
+    echo "檔案上傳失敗,請重新嘗試";
     echo $_FILES['img']['error'];
 }
 
-
 ?>
+
+<div class="text-center col-12 mt-3">
+    <input class="btn btn-warning mx-1" type="button" value="已了解" onclick="history.back()">
+</div>

@@ -11,6 +11,7 @@ $rows=all('survey_subject'," ORDER by `active` desc");
 
 $hot=q("SELECT `id` FROM `survey_subject` ORDER BY `vote` desc");
 foreach($rows as $row){
+    if($row['active']==1){
     ?>
     <li class='list-group-item list-group-item-action d-flex'>
     <div class='col-md-8'>
@@ -28,7 +29,7 @@ foreach($rows as $row){
 
     <?php
 }
-
+}
 ?>
 
 </ul>

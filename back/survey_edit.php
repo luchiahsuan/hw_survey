@@ -27,6 +27,17 @@
 
     <form action="./api/survey_edit.php" class="col-10 mx-auto d-flex flex-wrap justify-content-end" method="post">
         <div class="form-group row col-12">
+            <div class="row mx-auto col-12">
+                <img src="./upload/<?= $row['img_name']; ?>" style="height: 130px;">
+
+            </div>
+            <div class="row mx-auto col-12">
+                <input type="file" name="img" >
+            </div>
+        </div>
+
+        <hr>
+        <div class="form-group row col-12">
             <label class="col-2 text-right">主題</label>
             <input type="text" name="subject" value="<?= $subject['subject']; ?>" class="form-control col-10">
             <input type="hidden" name="subject_id" value="<?= $subject['id']; ?>">

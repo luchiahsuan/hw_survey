@@ -1,18 +1,28 @@
 <?php
 include_once "../db/base.php";
 
-$data=[];
-    move_uploaded_file($_FILES['img']['tmp_name'],"../upload/".$_FILES['img']['name']);
+$data = [];
+echo $_FILES['img']['tmp_name'];
+$exp=explode(".",$_FILES['img']['name']);
+$sub=array_pop($exp);
+$img_name = date("Y-m-d-hi-s") . "." . $sub;
 
+if ($_FILES['img']['error'] == 0) {
 
+    move_uploaded_file($_FILES['img']['tmp_name'],"../upload/".$img_name);
+} else {
+    echo "請重選一張投票配圖";
+    echo $_FILES['img']['error'];
+}
 
 $subject = [
     'subject' => $_POST['subject'],
-    'img' => $_FILES['img'],
+    'img_name' => $img_name,
     'type' => 1,
     'vote' => 0,
     'active' => 0
 ];
+
 
 insert('survey_subject', $subject);
 
@@ -31,5 +41,6 @@ if (isset($_POST['opt'])) {
         }
     }
 }
+
 
 header("location:../admin_center.php?do=survey");

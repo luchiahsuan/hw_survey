@@ -14,12 +14,20 @@
 <body>
 
     <h3 class="text-center">新增調查</h3>
+    <div class="m-auto col-12">
+    <button onclick='addOption()' class="btn btn-success">新增選項+</button>
+    </div>
+    <form action="./api/survey_add.php" method="post" class="col-10 mx-auto d-flex flex-wrap justify-content-end" enctype="multipart/form-data">
+        <div class="form-group row col-12">
+            <div class="row mx-auto col-12">
+                <p>為你的投票選張圖片吧！</p>
+            </div>
+            <div class="row mx-auto col-12">
+                <input type="file" name="img">
+            </div>
+        </div>
 
-    <?php
-    include "main_upload.php";
-    ?>
-    <button onclick='addOption()' class="btn btn-success btn-sm py-0 mx-auto" style="font-size:1.2rem">新增選項+</button>
-    <form action="./api/survey_add.php" method="post" class="col-10 mx-auto d-flex flex-wrap justify-content-end">
+        <hr>
         <div class="form-group row col-12">
             <label class="col-2 text-right">主題</label>
             <input type="text" name="subject" class="form-control col-10">

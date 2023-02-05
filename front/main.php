@@ -19,8 +19,9 @@ foreach($rows as $row){
     <?= $row['subject'];?>
     </a>
     </div>
-    <div class='col-md-2 text-center' style="height: 30px;">
-    <?= $row['img'];?>
+    <div class='col-md-2 text-center' >
+    <img src="./upload/<?= $row['img_name'];?>" style="height: 130px;">
+    
     </div>
     <div class='col-md-2 text-center'>
     <?= $row['vote'];?>

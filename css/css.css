@@ -1,0 +1,218 @@
+body {
+    margin: 0 auto;
+    text-align: center;
+
+}
+
+.add_edit {
+    border: 2px solid black;
+    border-radius: 30px;
+    padding-bottom: 30px;
+    padding-top: 30px;
+}
+
+.del_Opt {
+    background-color: black;
+    color: aliceblue;
+    border-radius: 10px;
+    padding: 5px;
+    width: 13%;
+    height: 3vh;
+    text-align: center;
+    margin-left: 8px;
+}
+
+button,
+input,
+.chkBtn>a {
+    background-color: black;
+    color: aliceblue;
+    border-radius: 10px;
+    padding: 5px;
+}
+
+/* button,input,.chkBtn>a :hover{
+    background-color: aliceblue;
+    border: solid 1px black;
+    color: black;
+} */
+
+input:file {
+    background-color: black;
+    color: aliceblue;
+}
+
+.file input {
+    opacity: 0;
+}
+
+.file {
+    background-color: black;
+    color: aliceblue;
+    border-radius: 10px;
+    width: 35%;
+    height: 5vh;
+    margin: 0 auto;
+}
+
+
+
+.survey_list {
+    list-style: none;
+    display: flex;
+    height: 6vh;
+    align-items: center;
+    border: 1px solid black;
+}
+
+.survey_list_vote{
+    list-style: none;
+    width: 40%;
+    align-items: center;
+    margin: 0 auto;
+    border: 2px solid black;
+    border-radius: 30px;
+    padding-bottom: 30px;
+    padding-top: 30px;
+
+}
+
+.vote_opt{
+    display: flex;
+    margin: 0 auto;
+    justify-content: center;
+    margin: 30px 0 30px 0;
+}
+
+.vote_opt>div>input{
+    margin-right: 10px;
+}
+
+.survey_list_1 {
+    list-style: none;
+    display: flex;
+    height: 6vh;
+    align-items: center;
+    background-color: black;
+    color: aliceblue;
+    margin-top: 3vh;
+    border-radius: 30px 30px 0 0;
+}
+
+.survey_list_name {
+    width: 50%;
+    text-align: left;
+    margin-left: 3%;
+}
+
+/* 屬於survey.php */
+
+.survey {
+    margin: 0 auto;
+    width: 50%;
+}
+
+.survey_list_2 {
+    list-style: none;
+    display: flex;
+    height: 6vh;
+    align-items: center;
+    background-color: black;
+    color: aliceblue;
+    margin-top: 3vh;
+    border-radius: 30px 30px 0 0;
+}
+
+.survey_list_name_1 {
+    width: 25%;
+    text-align: left;
+    margin-left: 3%;
+}
+
+.survey_list_result {
+    width: 60%;
+    text-align: left;
+}
+
+.survey_list_vote_1,
+.survey_list_chkBtn_1 {
+    width: 10%;
+}
+
+.survey_list_3 {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    border: 1px solid black;
+}
+
+.survey_list_result_1 {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    
+    list-style: none;
+}
+
+.survey_list_result_img_color {
+    background-color: black;
+}
+
+.survey_list_vote_3 {
+    width: 20%;
+    text-align: center;
+}
+
+.survey_list_chkBtn_3{
+    text-align: right;
+    width: 19%;
+}
+
+.survey_list_chkBtn {
+    width: 30%;
+    text-align: right;
+    margin-right: 3%;
+
+}
+
+.survey_list_img>img {
+    height: 5vh;
+}
+
+.del_edit_chkBtn>a {
+    background-color: black;
+    color: aliceblue;
+    border-radius: 10px;
+    padding: 5px;
+}
+
+.del_edit_chkBtn {
+    border: 2px solid black;
+    border-radius: 30px;
+    padding-bottom: 30px;
+    padding-top: 30px;
+    width: 15%;
+}
+
+.center {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    margin: 0 auto;
+
+
+}
+
+.log_reg {
+    border: 2px solid black;
+    border-radius: 30px;
+    padding-bottom: 30px;
+    padding-top: 30px;
+    width: 30%;
+    margin: 0 auto;
+}
+
+.log_reg>form>div>input {
+    margin-top: 20px;
+}

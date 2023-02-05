@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>確認刪除？</title>
     <?php include "../layouts/link_css.php";?>
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/css.css">
 
 </head>
 <body>
@@ -15,9 +15,12 @@
     $subject=find("survey_subject",$_GET['id']);
 
     ?>
-<div class="col-3 text-center">
-    <a href="survey_del.php?id=<?= $subject['id']; ?>" class="btn btn-sm btn-success mx-1">確定刪除</a>
-    <a href="../admin_center.php?do=survey" class="btn btn-sm btn-info mx-1">取消刪除</a>
-</div>
+    <div class="center">
+        <div class="del_edit_chkBtn">
+            <p>你確定要刪除嗎？</p>
+            <a href="survey_del.php?id=<?= $subject['id']; ?>" >確定刪除</a>
+            <a href="../admin_center.php?do=survey" >取消刪除</a>
+        </div>
+    </div>
     <?php
     ?>

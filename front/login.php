@@ -1,5 +1,5 @@
-<div class='col-md-4 mx-auto my-5 p-5 border shadow-sm'>
-    <h3 class='text-center'>登入</h3>
+<div class="log_reg">
+    <h2> >登入< </h2>
 <?php
 if(isset($_GET['error'])){
     echo "<div class='text-danger text-center'>";
@@ -9,15 +9,15 @@ if(isset($_GET['error'])){
 }
 ?>
 
-<form action="./api/chk_user.php" method="post">
-    <div class="form-group">
+<form action="./api/chk_user.php" method="post" class="">
+    <div class="">
         <label>帳號</label> 
-        <input class="form-control" type="text" name="acc" id=""></div>
-    <div class="form-group">
+        <input class="" type="text" name="acc" id=""></div>
+    <div class="">
         <label>密碼</label>
-        <input class="form-control" type="password" name="pw" id=""></div>
-    <div class="text-center">
-        <input class="btn btn-primary" type="submit" value="登入" id="">
+        <input class="" type="password" name="pw" id=""></div>
+    <div class="">
+        <input class="" type="submit" value="登入" id="">
     </div>
 </form>
 </div>

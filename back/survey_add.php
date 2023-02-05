@@ -7,46 +7,48 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>新增投票主題</title>
     <?php include "./layouts/link_css.php"; ?>
-    <link rel="stylesheet" href="./css/back.css">
+    <link rel="stylesheet" href="./css/css.css">
 
 </head>
 
 <body>
 
-    <h3 class="text-center">新增調查</h3>
-    <div class="m-auto col-12">
-    <button onclick='addOption()' class="btn btn-success">新增選項+</button>
+    <div class="add_edit">
+    <h2> > 新增調查 < </h2>
+    <br>
+    <div>
+    <button onclick='addOption()' class="addOptBtn">新增選項+</button>
     </div>
-    <form action="./api/survey_add.php" method="post" class="col-10 mx-auto d-flex flex-wrap justify-content-end" enctype="multipart/form-data">
-        <div class="form-group row col-12">
-            <div class="row mx-auto col-12">
-                <p>為你的投票選張圖片吧！</p>
-            </div>
-            <div class="row mx-auto col-12">
+    <hr>
+    <form action="./api/survey_add.php" method="post" enctype="multipart/form-data">
+            <div class="">
+                <h4>為你的投票選張圖片吧！</h4>
+                <div class="file">
+                    點擊上傳圖片
                 <input type="file" name="img">
+                </div>
             </div>
-        </div>
-
-        <hr>
+            <hr>
         <div class="form-group row col-12">
             <label class="col-2 text-right">主題</label>
             <input type="text" name="subject" class="form-control col-10">
 
         </div>
-        <div id="options" class="col-11">
+        <div id="options" class="col-12">
             <div class="option form-group row col-12">
-                <label class="col-2 text-right">項目1</label>
+                <label class="col-2 text-right">選項1</label>
                 <input type="text" name="opt[]" class="form-control col-10">
             </div>
 
         </div>
-        <div class="text-center col-12 mt-3">
-            <input class="btn btn-primary mx-1" type="submit" value="確定新增">
-            <input class="btn btn-warning mx-1" type="reset" value="重置">
-            <input class="btn btn-warning mx-1" type="button" value="取消新增" onclick="location.href='admin_center.php?do=survey_vote'">
+        <div class="chkBtn">
+            <input type="submit" value="確定新增">
+            <input type="reset" value="重置">
+            <input type="button" value="取消新增" onclick="location.href='admin_center.php?do=survey_vote'">
 
         </div>
     </form>
+    </div>
 
 
     <script>

@@ -1,8 +1,8 @@
-<h1 class="text-center">最新投票選項</h1>
-<ul class="list-group">
-<li class='list-group-item list-group-item-action d-flex text-center bg-info text-white'>
-    <div class='col-md-10'>標題</div>
-    <div class='col-md-2'>已投票人數</div>
+<h2>最新投票選項</h2>
+<ul>
+<li class="survey_list_1">
+    <div class="survey_list_name">主題</div>
+    <div class="survey_list_vote_3">已投票人數</div>
 </li>    
 <?php
 
@@ -13,19 +13,19 @@ $hot=q("SELECT `id` FROM `survey_subject` ORDER BY `vote` desc");
 foreach($rows as $row){
     if($row['active']==1){
     ?>
-    <li class='list-group-item list-group-item-action d-flex'>
-    <div class='col-md-8'>
-    <a href='index.php?do=news_detail&id=<?= $row['id'] ;?>'>
+    <li class='survey_list'>
+    <div class='survey_list_name' >
+    <a href='index.php?do=news_detail&id=<?= $row['id'] ;?>'style="color: black;">
     <?= $row['subject'];?>
     </a>
     </div>
-    <div class='col-md-2 text-center' >
-    <img src="./upload/<?= $row['img_name'];?>" style="height: 130px;">
-    
-    </div>
-    <div class='col-md-2 text-center'>
+    <div class='survey_list_vote_3'>
     <?= $row['vote'];?>
     </div>
+    <div class='survey_list_img' >
+    <img src="./upload/<?= $row['img_name'];?>" >
+        </div>
+
     </li>
 
     <?php

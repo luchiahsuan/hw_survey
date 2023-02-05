@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>編輯投票內容</title>
     <?php include "./layouts/link_css.php"; ?>
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/css.css">
 
 </head>
 
@@ -23,17 +23,22 @@
     }
 
     ?>
-    <h3 class="text-center">編輯調查<button onclick='addOption()' class="btn btn-success btn-sm py-0" style="font-size:1.5rem">+</button></h3>
-
-    <form action="./api/survey_edit.php" class="col-10 mx-auto d-flex flex-wrap justify-content-end" method="post">
-        <div class="form-group row col-12">
-            <div class="row mx-auto col-12">
-                <img src="./upload/<?= $row['img_name']; ?>" style="height: 130px;">
-
+    <div class="add_edit">
+    <h2> > 編輯調查 < </h2>
+    <br>
+    <div>
+    <button onclick='addOption()' class="addOptBtn">新增選項+</button>
+    </div>
+    <hr>
+    <form action="./api/survey_edit.php" method="post">
+        <div class="">
+            <div class="">
+                <img src="../upload/<?= $row['img_name']; ?>" style="height: 130px;">
             </div>
-            <div class="row mx-auto col-12">
-                <input type="file" name="img" >
-            </div>
+            <div class="file">
+                    點擊選取欲更換圖片
+                <input type="file" name="img">
+                </div>
         </div>
 
         <hr>
@@ -47,21 +52,23 @@
             foreach ($options as $idx => $option) {
             ?>
                 <div class="option form-group row col-12">
-                    <label class="col-2 text-right">項目<?= $idx + 1; ?></label>
-                    <input type="text" name='opt[]' value="<?= $option['opt']; ?>" class="form-control col-9">
+                    <label class="col-2 text-right">選項<?= $idx + 1; ?></label>
+                    <input type="text" name='opt[]' value="<?= $option['opt']; ?>" class="form-control col-8">
                     <input type="hidden" name="opt_id[]" value="<?= $option['id']; ?>">
-                    <a href="./api/survey_option_del.php?id=<?= $option['id']; ?>" class="btn btn-danger btn-sm py-0">-</a>
+                    <a href="./api/survey_option_del.php?id=<?= $option['id']; ?>" class="del_Opt"> 刪除</a>
                 </div>
             <?php
             }
             ?>
         </div>
-        <div class="text-center col-12 mt-3">
-            <input class="btn btn-primary mx-1" type="submit" value="修改">
-            <input class="btn btn-warning mx-1" type="reset" value="重置">
-            <input class="btn btn-warning mx-1" type="button" value="取消修改" onclick="location.href='admin_center.php?do=survey_vote.php'">
+        <div class="chkBtn">
+            <input type="submit" value="修改">
+            <input type="reset" value="重置">
+            <input type="button" value="取消修改" onclick="location.href='admin_center.php?do=survey_vote.php'">
         </div>
     </form>
+    </div>
+
     <script>
         function addOption() {
             let options = document.getElementById('options');
@@ -69,7 +76,7 @@
             let opt = document.createElement("div");
             let label = document.createElement("label");
             let input = document.createElement('input');
-            let numNode = document.createTextNode("項目" + num);
+            let numNode = document.createTextNode("選項" + num);
 
             opt.setAttribute("class", "option form-group row col-12")
             label.setAttribute("class", "col-2 text-right");

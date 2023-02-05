@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>參與投票專區</title>
     <?php include "../layouts/link_css.php"; ?>
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/css.css">
 
 </head>
 
@@ -24,41 +24,41 @@
         </nav>
     </header>
 
-    <h3 class="text-center">進行中的意見調查</h3>
-    <ul class="list-group col-md-10 m-auto">
-        <li class="d-flex text-center list-group-item list-group-item-info list-group-item-action">
-            <div class="col-3">主題</div>
-            <div class="col-5">目前比數</div>
-            <div class="col-2">參與人數</div>
-            <div class="col-2">一起投票</div>
+    <h2> >進行中的意見調查< </h2>
+    <ul class="survey">
+        <li class="survey_list_2">
+            <div class="survey_list_name_1">主題</div>
+            <div class="survey_list_result">目前比數</div>
+            <div class="survey_list_vote_1">參與人數</div>
+            <div class="survey_list_chkBtn_1">一起投票</div>
         </li>
 
         <?php
         $surveys = all("survey_subject", ['active' => 1]);
         foreach ($surveys as $survey) {
         ?>
-            <li class="d-flex list-group-item list-group-item-light list-group-item-action">
-                <div class="col-3 font-weight-bolder" style="font-size:1.25rem">
+            <li class="survey_list_3">
+                <div class="survey_list_name_1">
                     <?= $survey['subject']; ?>
 
                 </div>
-                <div class="col-5 font-weight-bolder" style="font-size:1.25rem">
+                <div class="survey_list_result">
                     <?php
 
                     $subject = find("survey_subject", $survey['id']);
                     $options = all("survey_options", ['subject_id' => $survey['id']]);
 
                     ?>
-                    <ul class="list-group col-10 mx-auto">
+                    <ul class="survey_list_result_1">
                         <?php
                         foreach ($options as $option) {
                             $division = ($subject['vote'] == 0) ? 1 : $subject['vote'];
                             $width = round(($option['vote'] / $division) * 100, 2);
                         ?>
-                            <li class="d-flex list-group-item list-group-item-light list-group-item-action">
-                                <div class="col-4"><?= $option['opt']; ?></div>
-                                <div class="col-8 d-flex align-items-center">
-                                    <div class="bg-primary rounded" style="width:<?= $width; ?>%">&nbsp;</div>
+                            <li class="">
+                                <div class="survey_list_result_opt"><?= $option['opt']; ?></div>
+                                <div class="survey_list_result_img">
+                                    <div class="survey_list_result_img_color" style="width:<?= $width; ?>%">&nbsp;</div>
                                     <div><?= $width; ?>%</div>
                                 </div>
                             </li>
@@ -67,10 +67,10 @@
                         ?>
                     </ul>
                 </div>
-                <div class="col-2 text-center">
+                <div class="survey_list_vote_1">
                     <?= $survey['vote']; ?>
                 </div>
-                <div class="col-2 text-center">
+                <div class="survey_list_chkBtn_1 chkBtn">
                     <a href="survey_item.php?do=&id=<?= $survey['id']; ?>" class="btn btn-sm btn-success mx-1">投票</a>
                 </div>
             </li>

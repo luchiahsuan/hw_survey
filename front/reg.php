@@ -1,3 +1,4 @@
+<br><br>
 <div class="log_reg">
     <h2> > 會員註冊 < </h2>
     <form action="./api/reg_user.php" method="post">

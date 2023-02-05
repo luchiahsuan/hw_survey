@@ -1,3 +1,4 @@
+<br><br>
 <h2>最新投票選項</h2>
 <ul>
 <li class="survey_list_1">

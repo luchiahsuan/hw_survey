@@ -16,18 +16,18 @@ include "./db/base.php";
 </head>
 
 <body>
-    <header class="shadow mb-5">
-        <nav class="container d-flex justify-content-between py-3">
+    <header class="index_header">
+        <nav class="nav_bar">
             <div>
-                <a class='mx-2' href="index.php">回首頁</a>
+                <a class='to_index' href="index.php">回首頁</a>
             </div>
-            <div>
-                <marquee behavior="" direction="">請加入會員以參與投票喔！</marquee>
+            <div class="marquee">
+                <marquee>請加入會員以參與投票喔！</marquee>
             </div>
             
-            <div>
-                <a class='mx-2' href="index.php?do=reg">會員註冊</a>
-                <a class='mx-2' href="index.php?do=login">會員登入</a>
+            <div class="menber">
+                <a class='to_reg' href="index.php?do=reg">會員註冊｜</a>
+                <a class='to_log' href="index.php?do=login">會員登入</a>
             </div>
         </nav>
     </header>

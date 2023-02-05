@@ -13,17 +13,17 @@
 </head>
 
 <body>
-    <header class="shadow mb-5">
-        <nav class="container d-flex justify-content-between py-3">
+    <header class="index_header">
+        <nav class="nav_bar">
         <div>
-                <a class='mx-2'></a>
+                <a class=''></a>
             </div>
-            <div>
-                <a class='mx-2' href="../logout.php">會員登出</a>
+            <div class="menber">
+                <a class='to_log' href="../logout.php">會員登出</a>
             </div>
         </nav>
     </header>
-
+<br><br>
     <h2> >進行中的意見調查< </h2>
     <ul class="survey">
         <li class="survey_list_2">

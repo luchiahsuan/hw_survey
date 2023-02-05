@@ -16,15 +16,15 @@ include "./db/base.php";
 </head>
 
 <body>
-    <header class="shadow mb-5">
-        <nav class="container d-flex justify-content-between py-3">
+    <header class="index_header">
+        <nav class="nav_bar">
             <div>
-                <a class='mx-2' href="index.php">回網站首頁</a>
-                <a class='mx-2' href="admin_center.php">回管理首頁</a>
+                <a class='to_index' href="index.php">回網站首頁｜</a>
+                <a class='to_admin' href="admin_center.php">回管理首頁</a>
             </div>
 
-            <div>
-                <a class='mx-2' href="logout.php">管理登出</a>
+            <div class="menber">
+                <a class='to_log' href="logout.php">管理登出</a>
             </div>
         </nav>
     </header>

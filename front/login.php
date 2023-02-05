@@ -1,3 +1,4 @@
+<br><br>
 <div class="log_reg">
     <h2> >登入< </h2>
 <?php

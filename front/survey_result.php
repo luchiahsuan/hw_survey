@@ -5,7 +5,7 @@ $subject=find("survey_subject",$_GET['id']);
 $options=all("survey_options",['subject_id'=>$_GET['id']]);
 
 ?>
-<h3 class="text-center font-weight-bold">調查結果</h3>
+<h3 class="text-center font-weight-bold">投票調查結果</h3>
 
 <h3 class="text-primary text-center"><?=$subject['subject'];?></h3>
 <ul class="list-group col-10 mx-auto">

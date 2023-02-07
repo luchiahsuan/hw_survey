@@ -24,49 +24,53 @@
 
     ?>
     <div class="add_edit">
-    <h2> > 編輯調查 < </h2>
-    <br>
-    <div>
-    <button onclick='addOption()' class="addOptBtn">新增選項+</button>
-    </div>
-    <hr>
-    <form action="./api/survey_edit.php" method="post">
-        <div class="">
-            <div class="">
-                <img src="../upload/<?= $row['img_name']; ?>" style="height: 130px;">
-            </div>
-            <div class="file">
-                    點擊選取欲更換圖片
-                <input type="file" name="img" accept="image/gif, image/jpeg, image/png">
+        <h2> > 編輯調查 < </h2>
+                <br>
+                <div>
+                    <button onclick='addOption()' class="addOptBtn">新增選項+</button>
                 </div>
-        </div>
+                <hr>
+                <form action="./api/survey_edit.php" method="post">
+                    <div class="">
+                        <div class="">
+                            現存圖片為<br>
+                            <img src="../upload/<?= $row['img_name']; ?>" style="height: 130px;">
+                        </div>
+                        <div class="file">
+                            點擊選取欲更換圖片
+                            <input type="file" name="img" accept="image/gif, image/jpeg, image/png" onchange="readURL(this)" id="choose_img">
+                        </div>
+                        <br>
+                        <img id="now_img" style="height: 300px;" src="#" />
 
-        <hr>
-        <div class="form-group row col-12">
-            <label class="col-2 text-right">主題</label>
-            <input type="text" name="subject" value="<?= $subject['subject']; ?>" class="form-control col-10">
-            <input type="hidden" name="subject_id" value="<?= $subject['id']; ?>">
-        </div>
-        <div id="options" class="col-11">
-            <?php
-            foreach ($options as $idx => $option) {
-            ?>
-                <div class="option form-group row col-12">
-                    <label class="col-2 text-right">選項<?= $idx + 1; ?></label>
-                    <input type="text" name='opt[]' value="<?= $option['opt']; ?>" class="form-control col-8">
-                    <input type="hidden" name="opt_id[]" value="<?= $option['id']; ?>">
-                    <a href="./api/survey_option_del.php?id=<?= $option['id']; ?>" class="del_Opt"> 刪除</a>
-                </div>
-            <?php
-            }
-            ?>
-        </div>
-        <div class="chkBtn">
-            <input type="submit" value="修改">
-            <input type="reset" value="重置">
-            <input type="button" value="取消修改" onclick="location.href='admin_center.php?do=survey_vote.php'">
-        </div>
-    </form>
+                    </div>
+
+                    <hr>
+                    <div class="form-group row col-12">
+                        <label class="col-2 text-right">主題</label>
+                        <input type="text" name="subject" value="<?= $subject['subject']; ?>" class="form-control col-10">
+                        <input type="hidden" name="subject_id" value="<?= $subject['id']; ?>">
+                    </div>
+                    <div id="options" class="col-11">
+                        <?php
+                        foreach ($options as $idx => $option) {
+                        ?>
+                            <div class="option form-group row col-12">
+                                <label class="col-2 text-right">選項<?= $idx + 1; ?></label>
+                                <input type="text" name='opt[]' value="<?= $option['opt']; ?>" class="form-control col-8">
+                                <input type="hidden" name="opt_id[]" value="<?= $option['id']; ?>">
+                                <a href="./api/survey_option_del.php?id=<?= $option['id']; ?>" class="del_Opt"> 刪除</a>
+                            </div>
+                        <?php
+                        }
+                        ?>
+                    </div>
+                    <div class="chkBtn">
+                        <input type="submit" value="修改">
+                        <input type="reset" value="重置">
+                        <input type="button" value="取消修改" onclick="location.href='admin_center.php?do=survey_vote.php'">
+                    </div>
+                </form>
     </div>
 
     <script>
@@ -90,6 +94,34 @@
 
             options.appendChild(opt)
 
+
+        }
+
+
+        $("#choose_img").change(function() {
+
+            readURL(this);
+
+        });
+
+
+
+
+        function readURL(input) {
+
+            if (input.files && input.files[0]) {
+
+                var reader = new FileReader();
+
+                reader.onload = function(e) {
+
+                    $("#now_img").attr('src', e.target.result);
+
+                }
+
+                reader.readAsDataURL(input.files[0]);
+
+            }
 
         }
     </script>

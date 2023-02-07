@@ -25,7 +25,7 @@
                 <h4>為你的投票選張圖片吧！</h4>
                 <div class="file">
                     點擊上傳圖片
-                <input type="file" name="img">
+                <input type="file" name="img" accept="image/gif, image/jpeg, image/png">
                 </div>
             </div>
             <hr>

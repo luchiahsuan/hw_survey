@@ -37,7 +37,7 @@
             </div>
             <div class="file">
                     點擊選取欲更換圖片
-                <input type="file" name="img">
+                <input type="file" name="img" accept="image/gif, image/jpeg, image/png">
                 </div>
         </div>
 

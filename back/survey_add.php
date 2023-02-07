@@ -25,8 +25,7 @@
                         <h4>為你的投票選張圖片吧！</h4>
                         <div class="file">
                             點擊上傳圖片
-                            <input type="file" name="img" accept="image/gif, image/jpeg, image/png" 
-                            onchange="readURL(this)" id="choose_img">
+                            <input type="file" name="img" accept="image/gif, image/jpeg, image/png" onchange="readURL(this)" id="choose_img">
                         </div>
                         <br>
                         <img id="now_img" style="height: 300px;" src="#" />
@@ -55,28 +54,29 @@
 
 
     <script>
+
+        
         function addOption() {
-            let options = document.getElementById('options');
+            const options = $('#options');
+
+            let option = "";
             let num = document.getElementsByClassName('option').length + 1
 
-            let opt = document.createElement("div");
-            let label = document.createElement("label");
-            let input = document.createElement('input');
-            let numNode = document.createTextNode("選項" + num);
+            option += `
+                <div class="option form-group row col-12">
+                    <label class="col-2 text-right"> 選項${num} </label>
+                    <input type="text" name="opt[]" class="form-control col-10">
+                </div>
+                `;
 
-            opt.setAttribute("class", "option form-group row col-12")
-            label.setAttribute("class", "col-2 text-right");
-            input.setAttribute("class", "form-control col-10")
-            input.setAttribute("name", "opt[]")
-            input.setAttribute("type", "text")
+            options.append(option);
 
-            label.appendChild(numNode)
-            opt.appendChild(label);
-            opt.appendChild(input);
+        };
 
-            options.appendChild(opt)
 
-        }
+
+
+
 
         $("#choose_img").change(function() {
 

@@ -75,27 +75,21 @@
 
     <script>
         function addOption() {
-            let options = document.getElementById('options');
+            const options = $('#options');
+
+            let option = "";
             let num = document.getElementsByClassName('option').length + 1
-            let opt = document.createElement("div");
-            let label = document.createElement("label");
-            let input = document.createElement('input');
-            let numNode = document.createTextNode("選項" + num);
 
-            opt.setAttribute("class", "option form-group row col-12")
-            label.setAttribute("class", "col-2 text-right");
-            input.setAttribute("class", "form-control col-10")
-            input.setAttribute("name", "optn[]")
-            input.setAttribute("type", "text")
+            option += `
+                <div class="option form-group row col-12">
+                    <label class="col-2 text-right"> 選項${num} </label>
+                    <input type="text" name="opt[]" class="form-control col-10">
+                </div>
+                `;
 
-            label.appendChild(numNode)
-            opt.appendChild(label);
-            opt.appendChild(input);
+            options.append(option);
 
-            options.appendChild(opt)
-
-
-        }
+        };
 
 
         $("#choose_img").change(function() {

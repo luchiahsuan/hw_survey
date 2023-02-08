@@ -42,6 +42,8 @@ include "./db/base.php";
         ?>
     </main>
     <?php include "./layouts/scripts.php"; ?>
+    <?php include "./time_box.php"; ?>
+
 </body>
 
 </html>

@@ -78,4 +78,7 @@
         }
 
         ?>
+        <br>
+    <?php include "../time_box.php"; ?>
+<br>
     </ul>

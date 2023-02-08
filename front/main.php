@@ -33,5 +33,7 @@ foreach($rows as $row){
 }
 }
 ?>
+    <?php include "./time_box.php"; ?>
+
 
 </ul>
